@@ -1,5 +1,5 @@
-import { Suspense, useEffect, useState} from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Suspense, useEffect, useState, useRef} from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { Environment, OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 const Computers = () => {
@@ -10,7 +10,7 @@ const Computers = () => {
         <pointLight intensity={10}/>
         <spotLight
           position={[-20, 50, 10]}
-          angle={0.12}
+          angle={0.92}
           penumbra={1}
           intensity={1}
           castShadow
@@ -18,8 +18,8 @@ const Computers = () => {
         />
         <primitive
           object={computer.scene}
-          scale={0.75}
-          position={[0,-2.25,-1.25]}
+          scale={0.60}
+          position={[0,-0.75,-1.75]}
           rotation={[-0.01,-0.2,-0.1]}
         />
     </mesh>

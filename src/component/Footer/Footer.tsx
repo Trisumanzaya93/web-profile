@@ -1,4 +1,5 @@
-import React from 'react'
+'use client';
+import React, { useState } from "react";
 import Image from "next/image";
 import {
   IconBrandGithub,
@@ -8,6 +9,13 @@ import {
   IconNewSection,
   IconTerminal2,
 } from "@tabler/icons-react";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "motion/react";
+import { cn } from "@/lib/utils";
 
 import { FloatingDock } from "@/components/ui/floating-dock";
 
@@ -72,13 +80,51 @@ const links = [
 ];
 
 function Footer() {
+
+  const { scrollYProgress, scrollY } = useScroll();
+ 
+  const [visible, setVisible] = useState(true);
+  
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    if (typeof current === "number") {
+      const direction = current! - scrollYProgress.getPrevious()!;
+      if(scrollYProgress.get()> 5){
+        setVisible(false)
+      }else if (direction < 0) {
+        setVisible(true)
+      }else{
+        setVisible(false)
+      }
+    }
+  });
   return (
-    <div className="absolute bottom-0 w-full flex justify-center items-center">
+
+    <header className='w-screen sticky z-30 top-0 px-7 h-20 flex items-center justify-around'>
+    <AnimatePresence mode="wait">
+      <motion.div
+        initial={{
+          opacity: 1,
+          y: -100,
+        }}
+        animate={{
+          y: visible ? 0 : -100,
+          opacity: visible ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+        className={cn(
+          `w-screen sticky z-50 top-0 px-7 h-20 flex items-center justify-around`,
+          // className
+        )}
+      >
         <FloatingDock
           mobileClassName="translate-x-20" // only for demo, remove for production
           items={links}
         />
-    </div>
+      </motion.div>
+    </AnimatePresence>
+    </header>
   )
 }
 

@@ -11,12 +11,12 @@ import { EvervaultCard } from "@/components/ui/evervault-card";
 export default function Home() {
 
   return (
-    // <div>
-      <div className={`w-full flex flex-col justify-center items-center relative pb-24`}>
+    <div>
+       {/* <div className={`w-full flex flex-col justify-center items-center pb-24`}> */}
 
-        <Footer />
+        {/* <Footer /> */}
         <HeroSection />
-      </div>
-    // </div>
+       {/* </div> */}
+    </div>
   );
 }

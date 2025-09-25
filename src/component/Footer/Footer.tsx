@@ -1,4 +1,4 @@
-'use client';
+
 import React, { useState } from "react";
 import Image from "next/image";
 import {
@@ -88,7 +88,7 @@ function Footer() {
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
       const direction = current! - scrollYProgress.getPrevious()!;
-      if(scrollYProgress.get()> 5){
+      if(scrollYProgress.get() > 5){
         setVisible(false)
       }else if (direction < 0) {
         setVisible(true)
@@ -99,15 +99,19 @@ function Footer() {
   });
   return (
 
-    <header className='w-screen sticky z-30 top-0 px-7 h-20 flex items-center justify-around'>
+    <nav style={{
+      position:'sticky',
+      top: '90%',
+      zIndex:100
+    }}>
     <AnimatePresence mode="wait">
       <motion.div
         initial={{
           opacity: 1,
-          y: -100,
+          y: 100,
         }}
         animate={{
-          y: visible ? 0 : -100,
+          y: visible ? 0 : 100,
           opacity: visible ? 1 : 0,
         }}
         transition={{
@@ -119,12 +123,12 @@ function Footer() {
         )}
       >
         <FloatingDock
-          mobileClassName="translate-x-20" // only for demo, remove for production
+          // mobileClassName="translate-x-20" // only for demo, remove for production
           items={links}
         />
       </motion.div>
     </AnimatePresence>
-    </header>
+     </nav>
   )
 }
 

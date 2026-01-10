@@ -211,11 +211,12 @@ const slideData = [
   },
 ];
 
-function HeroSection() {
-
+function HeroSection(props) {
+  console.log(props,'hero');
+  
   return (
-    <main className='flex flex-col items-center -mt-20 '>
-      <Footer />
+    <main className='flex flex-col items-center -mt-20'>
+      <Footer scrollReff={props.scrollReff}/>
       <div className='lg:max-w-[1440px] h-screen flex justify-center'>
         <div className='w-[calc(100%)] h-screen  absolute -z-10 bg-black'>
           <DotGrid
@@ -264,39 +265,41 @@ function HeroSection() {
 
         <Timeline data={data} />
       </div>
-      <div className='w-full bg-black font-mono pb-20'>
-        <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-20">
-          <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold">
-            Toolkit
-          </h2>
-          <p className="text-white text-sm md:text-base max-w-md">
-            Core tools that drive my development journey.
-          </p>
-        </div>
-        <div className='lg:max-w-[1440px] px-10'>
-          <LogoLoop
-            logos={techLogos}
-            speed={120}
-            direction="left"
-            logoHeight={100}
-            gap={60}
-            pauseOnHover
-            scaleOnHover
-            fadeOut
-            fadeOutColor="#000000"
-            ariaLabel="Technology partners"
-          />
-        </div>
-        <div className="relative overflow-hidden w-full h-full pb-20">
+      <div className='w-full bg-black flex justify-center font-mono pb-20'>
+        <div className='lg:max-w-[1440px]'>
           <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-20">
             <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold">
-              Certificate
+              Toolkit
             </h2>
             <p className="text-white text-sm md:text-base max-w-md">
-              Badges unlocked along the journey
+              Core tools that drive my development journey.
             </p>
           </div>
-          <Carousel slides={slideData} />
+          <div className='lg:max-w-[1440px] px-10'>
+            <LogoLoop
+              logos={techLogos}
+              speed={120}
+              direction="left"
+              logoHeight={100}
+              gap={60}
+              pauseOnHover
+              scaleOnHover
+              fadeOut
+              fadeOutColor="#000000"
+              ariaLabel="Technology partners"
+            />
+          </div>
+          <div className="relative overflow-hidden w-full h-full pb-20">
+            <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-20">
+              <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold">
+                Certificate
+              </h2>
+              <p className="text-white text-sm md:text-base max-w-md">
+                Badges unlocked along the journey
+              </p>
+            </div>
+            <Carousel slides={slideData} />
+          </div>
         </div>
       </div>
 
@@ -310,21 +313,19 @@ function HeroSection() {
               Ready to start your next project? Our team is here to help you succeed. Reach out and let&apos;s discuss how we can bring your ideas to life.
             </p>
             <div className='w-full flex gap-5'>
-              <button className='w-64 flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg text-left' onClick={()=>{
+              <button className='flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg text-left' onClick={() => {
                 alert('asdadads')
               }}>
-                <div className='flex mt-2 mb-2'>
-                <MdOutlineMail className='p-0 text-lg mr-2' />
-                <p className='p-0 font-bold'>Email</p>
+                <div className='flex mt-2'>
+                  <MdOutlineMail className='p-0 text-lg mr-2' />
+                  <p className='p-0'>Email</p>
                 </div>
-                <p className='p-0'>Contact me on trisumanzaya93@gmail.com</p>
               </button>
-              <div className='w-64 flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'>
-                <div className='flex mt-2 mb-2'>
-                <MdOutlineMail className='p-0 text-lg mr-2' />
-                <p className='p-0 font-bold'>Whatsapp</p>
+              <div className='flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'>
+                <div className='flex mt-2'>
+                  <MdOutlineMail className='p-0 text-lg mr-2' />
+                  <p className='p-0'>Whatsapp</p>
                 </div>
-                <p className='p-0'>Contact me on +6281248886455</p>
               </div>
             </div>
           </div>
@@ -338,32 +339,32 @@ function HeroSection() {
             <div className='w-full flex gap-5'>
               <div className=' flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'>
                 <div className='flex mt-2'>
-                <SiInstagram className='p-0 m-0 text-lg mr-2' />
-                <p className='p-0'>Instagram</p>
+                  <SiInstagram className='p-0 m-0 text-lg mr-2' />
+                  <p className='p-0'>Instagram</p>
                 </div>
               </div>
               <div className='flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'>
                 <div className='flex mt-2'>
-                <SiTiktok className='p-0 text-lg mr-2' />
-                <p className='p-0'>Tiktok</p>
+                  <SiTiktok className='p-0 text-lg mr-2' />
+                  <p className='p-0'>Tiktok</p>
                 </div>
               </div>
               <div className='flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'>
                 <div className='flex mt-2'>
-                <SiLinkedin className='p-0 text-lg mr-2' />
-                <p className='p-0'>LinkedIn</p>
+                  <SiLinkedin className='p-0 text-lg mr-2' />
+                  <p className='p-0'>LinkedIn</p>
                 </div>
               </div>
               <div className='flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'>
                 <div className='flex mt-2'>
-                <SiGithub className='p-0 text-lg mr-2' />
-                <p className='p-0'>Github</p>
+                  <SiGithub className='p-0 text-lg mr-2' />
+                  <p className='p-0'>Github</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
+        <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
       </div>
     </main>
   );

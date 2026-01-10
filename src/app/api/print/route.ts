@@ -4,6 +4,9 @@ import escpos from "escpos";
 
 // pastikan escpos pakai USB
 escpos.USB = require("escpos-usb");
+import escposBluetooth from "escpos-bluetooth";
+
+escpos.Bluetooth = escposBluetooth;
 
 export async function POST(req: Request) {
   try {
@@ -11,7 +14,10 @@ export async function POST(req: Request) {
     const { text } = body;
 
     // deteksi printer USB
-    const device = new escpos.USB();
+    const address = "00:11:22:33:44:55"; // MAC address printer
+
+    const device = new escpos.Bluetooth(address);
+    // const device = new escpos.USB();
     console.log(device,'asdas');
     
     const options = { encoding: "GB18030" }; // support charset China/UTF-8

@@ -1,14 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config) => {
-    config.externals.push({
-      "escpos-usb": "commonjs escpos-usb",
-      usb: "commonjs usb",
-    });
-    return config;
+  turbopack: {
+    resolveAlias: {
+      "@": "./",
+    },
   },
-    images: {
-        domains: ['assets.aceternity.com','img.freepik.com'],
-    },};
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.aceternity.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
+        pathname: "/**",
+      },
+    ],
+  },
+};
 
 export default nextConfig;

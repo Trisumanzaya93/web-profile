@@ -2,8 +2,10 @@ import React from 'react';
 import type { Props } from './Container.type';
 
 function Container({children}: Props) {
+
+  const { innerWidth: width, innerHeight: height } = window;
   return (
-    <div className="w-[1440px]  h-full flex justify-center scroll-auto overflow-auto overscroll-x-none">
+    <div className={`w-full h-[${height}] flex flex-col justify-center overflow-auto scroll-auto`}>
         {children}
     </div>
   )

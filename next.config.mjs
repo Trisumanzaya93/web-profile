@@ -1,7 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['assets.aceternity.com','img.freepik.com'],
-    },};
+  turbopack: {
+    resolveAlias: {
+      "@": "./",
+    },
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.aceternity.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
+        pathname: "/**",
+      },
+    ],
+  },
+};
 
 export default nextConfig;

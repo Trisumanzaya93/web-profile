@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import {
   IconBrandGithub,
@@ -8,6 +10,15 @@ import {
   IconNewSection,
   IconTerminal2,
 } from "@tabler/icons-react";
+import { SlDocs } from "react-icons/sl";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+  useMotionValue
+} from "motion/react";
+import { cn } from "@/lib/utils";
 
 import { FloatingDock } from "@/components/ui/floating-dock";
 
@@ -18,67 +29,103 @@ const links = [
     icon: (
       <IconHome className="h-full w-full text-white dark:text-neutral-300" />
     ),
-    href: "learning",
+    href: "",
   },
 
   {
-    title: "Products",
+    title: "Docs",
     icon: (
-      <IconTerminal2 className="h-full w-full text-white dark:text-neutral-300" />
+      <SlDocs className="h-full w-full text-white dark:text-neutral-300" />
     ),
-    href: "#",
+    href: "comming-soon",
   },
   {
-    title: "Components",
+    title: "SZ-UI",
     icon: (
-      <IconNewSection className="h-full w-full text-white dark:text-neutral-300" />
+      <div className="w-full h-full bg-white flex justify-center items-center rounded-md">
+        <Image
+          src="/images/sumanzaya-logo.png"
+          alt="startup template"
+          width={40}
+          height={40}
+        />
+      </div>
     ),
-    href: "#",
+    href: "comming-soon",
   },
   {
-    title: "Aceternity UI",
+    title: "Playground",
     icon: (
-      <Image
-        src="https://assets.aceternity.com/logo-dark.png"
-        width={20}
-        height={20}
-        alt="Aceternity Logo"
-      />
+      <div className="w-full h-full bg-white flex justify-center items-center rounded-md">
+        <Image
+          src="/images/playground.png"
+          alt="startup template"
+          width={50}
+          height={50}
+        />
+      </div>
     ),
-    href: "#",
-  },
-  {
-    title: "Changelog",
-    icon: (
-      <IconExchange className="h-full w-full text-white dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-
-  {
-    title: "Twitter",
-    icon: (
-      <IconBrandX className="h-full w-full text-white dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-  {
-    title: "GitHub",
-    icon: (
-      <IconBrandGithub className="h-full w-full text-white dark:text-neutral-300" />
-    ),
-    href: "#",
+    href: "comming-soon",
   },
 ];
 
-function Footer() {
+function Footer(props) {
+  const lastScrollY = useRef(0);
+
+  const [visible, setVisible] = useState(true);
+  useEffect(() => {
+    const el = props.scrollReff.current;
+    if (!el) return;
+
+    const handler = () => {
+      const scrollY = el.scrollTop;
+
+      if (scrollY < lastScrollY.current) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+
+      lastScrollY.current = scrollY;
+    }
+
+    el.addEventListener("scroll", handler);
+    return () => el.removeEventListener("scroll", handler);
+  }, []);
+
+
   return (
-    <div className="absolute bottom-0 w-full flex justify-center items-center">
-        <FloatingDock
-          mobileClassName="translate-x-20" // only for demo, remove for production
-          items={links}
-        />
-    </div>
+
+    <nav style={{
+      position: 'sticky',
+      top: '90%',
+      zIndex: 100
+    }}>
+      <AnimatePresence mode="wait">
+        <motion.div
+          initial={{
+            opacity: 1,
+            y: 100,
+          }}
+          animate={{
+            y: visible ? 0 : 100,
+            opacity: visible ? 1 : 0,
+          }}
+          transition={{
+            duration: 0.2,
+          }}
+          className={cn(
+            `w-screen sticky z-50 top-0 px-7 h-20 flex items-center justify-around`,
+            // className
+          )}
+        >
+          <FloatingDock
+            // mobileClassName="translate-x-20" // only for demo, remove for production
+            items={links}
+          />
+        </motion.div>
+      </AnimatePresence>
+    </nav>
   )
 }
 

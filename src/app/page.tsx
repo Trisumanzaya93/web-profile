@@ -1,5 +1,6 @@
 "use client"
-import React, { Suspense } from "react";
+
+import React, { Suspense, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, Preload } from "@react-three/drei";
 import HeroSection from "@/components/ui/HeroSection/HeroSection";
@@ -9,14 +10,16 @@ import { EvervaultCard } from "@/components/ui/evervault-card";
 
 
 export default function Home() {
-return (
-  <div className="w-[100vw] h-[100vh] flex justify-center items-end">
-    {/* <div className="flex absolute justify-center items-center z-10">
-      <ComputerCanvas/>
-    </div> */}
-      {/* <EvervaultCard text="test"/> */}
-        <HeroSection/>
-      <Footer/>
-  </div>
-);
+
+  const scrollReff = useRef();
+
+  return (
+    <div className="h-full overflow-y-scroll" ref={scrollReff}>
+       {/* <div className={`w-full flex flex-col justify-center items-center pb-24`}> */}
+
+        {/* <Footer /> */}
+        <HeroSection scrollReff={scrollReff}/>
+       {/* </div> */}
+    </div>
+  );
 }

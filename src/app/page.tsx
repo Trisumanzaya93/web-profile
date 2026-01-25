@@ -21,7 +21,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="h-full overflow-scroll scroll-h" ref={scrollReff}>
+    <div className="h-full overflow-scroll scroll-h scrollbar-hide" ref={scrollReff}>
         <Modal open={isMobile} />
         {!isMobile && <HeroSection scrollReff={scrollReff} displayDock={!isMobile} />}
     </div>

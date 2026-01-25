@@ -301,8 +301,8 @@ function HeroSection(props: Props) {
         <Timeline data={data} />
       </div>
       <div className='w-full flex justify-center font-mono pb-20'>
-        <div className='lg:max-w-[1440px]'>
-          <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-20">
+        <div className='w-full lg:max-w-[1440px]'>
+          <div className="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20">
             <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold">
               Toolkit
             </h2>
@@ -420,7 +420,7 @@ function HeroSection(props: Props) {
           </div> */}
           </div>
         </div>
-        <div className='absolute  w-full h-full 2xl'>
+        <div className='absolute  w-full h-full'>
           <div className='relative h-full'>
           <Lanyard position={[0, 0, 40]} gravity={[0, -40, 0]} />
           </div>

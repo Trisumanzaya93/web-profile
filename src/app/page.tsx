@@ -1,25 +1,29 @@
-"use client"
+"use client";
 
-import React, { Suspense, useEffect, useRef } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls, Preload } from "@react-three/drei";
+import { useEffect, useRef, useState } from "react";
 import HeroSection from "@/components/ui/HeroSection/HeroSection";
-import Footer from '@/component/Footer/Footer'
-import ComputerCanvas from "@/component/Desktop/Desktop";
-import { EvervaultCard } from "@/components/ui/evervault-card";
+import Modal from "@/components/ui/modal";
 
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(true);
 
-  const scrollReff = useRef();
+  const scrollReff = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+
+  const width = window.innerWidth;
+    if (width < 1024) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, []);
 
   return (
-    <div className="h-full overflow-y-scroll" ref={scrollReff}>
-       {/* <div className={`w-full flex flex-col justify-center items-center pb-24`}> */}
-
-        {/* <Footer /> */}
-        <HeroSection scrollReff={scrollReff}/>
-       {/* </div> */}
+    <div className="h-full overflow-scroll scroll-h" ref={scrollReff}>
+        <Modal open={isMobile} />
+        {!isMobile && <HeroSection scrollReff={scrollReff} displayDock={!isMobile} />}
     </div>
   );
 }

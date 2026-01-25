@@ -1,6 +1,6 @@
 "use client";
 /* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable react/no-unknown-property */
+ 
 import {
   Suspense,
   useRef,
@@ -109,7 +109,6 @@ const ModelInner = ({
     if (ext === "glb" || ext === "gltf") return useGLTF(url).scene.clone();
     if (ext === "fbx") return useFBX(url).clone();
     if (ext === "obj") return useLoader(OBJLoader, url).clone();
-    console.error("Unsupported format:", ext);
     return null;
   }, [url, ext]);
 

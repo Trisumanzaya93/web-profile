@@ -1,22 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client"
 
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import {
-  IconBrandGithub,
-  IconBrandX,
-  IconExchange,
   IconHome,
-  IconNewSection,
-  IconTerminal2,
 } from "@tabler/icons-react";
 import { SlDocs } from "react-icons/sl";
 import {
   motion,
   AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-  useMotionValue
 } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -69,7 +62,7 @@ const links = [
   },
 ];
 
-function Footer(props) {
+function Footer(props: any) {
   const lastScrollY = useRef(0);
 
   const [visible, setVisible] = useState(true);
@@ -115,7 +108,7 @@ function Footer(props) {
             duration: 0.2,
           }}
           className={cn(
-            `w-screen sticky z-50 top-0 px-7 h-20 flex items-center justify-around`,
+            `w-screen sticky top-0 px-7 h-20 flex items-center justify-around`,
             // className
           )}
         >

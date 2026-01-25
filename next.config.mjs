@@ -2,7 +2,7 @@
 const nextConfig = {
   turbopack: {
     resolveAlias: {
-      "@": "./",
+      "@": "./src",
     },
   },
   images: {
@@ -19,6 +19,7 @@ const nextConfig = {
       },
     ],
   },
+  output: 'standalone',
 };
 
 export default nextConfig;

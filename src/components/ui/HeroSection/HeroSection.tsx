@@ -55,7 +55,7 @@ const data = [
         <p className="mb-8 text-lg text-white">
           Delivered assignment features for the Digi Expert web platform
         </p>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 mb-10">
           <Image
             src="/images/digiexpert1.png"
             alt="startup template"
@@ -100,58 +100,7 @@ const data = [
     ),
   },
   {
-    title: "2023",
-    content: (
-      <div>
-        <p className="text-lg text-white font-bold">
-          Indosat - Front End Developer
-        </p>
-        <p className="mb-8 text-lg text-white">
-          Built & integrated a loan simulation system inside webview.
-        </p>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="p-5 bg-white rounded-lg ">
-            <Image
-              src="/images/indosat1.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-20 w-full object-contain rounded-lg bg-red  md:h-44 lg:h-96"
-            />
-          </div>
-          <div className="p-5 bg-white rounded-lg ">
-            <Image
-              src="/images/indosat2.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-20 w-full object-contain rounded-lg bg-red  md:h-44 lg:h-96"
-            />
-          </div>
-          <div className="p-5 bg-white rounded-lg ">
-            <Image
-              src="/images/indosat3.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-20 w-full object-contain rounded-lg bg-red  md:h-44 lg:h-96"
-            />
-          </div>
-          <div className="p-5 bg-white rounded-lg ">
-            <Image
-              src="/images/indosat4.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-20 w-full object-contain rounded-lg bg-red  md:h-44 lg:h-96"
-            />
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "Now",
+    title: "2023 - Now",
     content: (
       <div>
         <p className="text-lg mb-8 text-white font-bold">
@@ -184,6 +133,31 @@ const data = [
         <li className="text-lg text-white">
           Designed and implemented Registration V2 to improve onboarding reliability (BisnisKit).
         </li>
+        <div className='grid grid-cols-2 gap-4 mt-10'>
+          <Image
+            src="/images/jenius.png"
+            alt="Jenius"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg bg-red  md:h-44 lg:h-44"
+          />
+          <div className='flex justify-center items-center'>
+            <Image
+              src="/images/jenius-daya.png"
+              alt="Jenius"
+              width={500}
+              height={500}
+              className="h-20 w-20 md:w-1/2 rounded-lg bg-red  md:h-44 lg:h-44"
+            />
+          </div>
+          <Image
+            src="/images/bisniskit.png"
+            alt="Jenius"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg bg-red  md:h-44 lg:h-44"
+          />
+        </div>
       </div>
     ),
   },
@@ -265,12 +239,12 @@ function HeroSection(props: Props) {
             returnDuration={1.5}
           />
         </div>
-        <div className="w-full h-full flex flex-col gap-20 lg:flex-row justify-center text-white font-mono">
-          <div className='w-full lg:h-full flex justify-center'>
+        <div className="w-full h-full flex flex-col gap-20 lg:flex-row mt-20 md:mt-0 md:justify-center text-white font-mono">
+          <div className='w-full lg:h-full flex justify-center px-5'>
             <div className='h-full flex flex-col justify-center'>
-              <h1 className="text-5xl font-extrabold mb-4">Hi, I’m</h1>
-              <h1 className="text-5xl font-extrabold mb-4">Tri Sumanzaya</h1>
-              <div className='flex items-center'>
+              <h1 className="text-2xl text-center md:text-left md:text-5xl font-extrabold mb-4">Hi, I’m</h1>
+              <h1 className="text-2xl text-center md:text-left md:text-5xl font-extrabold mb-4">Tri Sumanzaya</h1>
+              <div className='flex items-center flex-col md:flex-row'>
                 <TrueFocus
                   sentence="Mobile Software"
                   manualMode={false}
@@ -280,14 +254,14 @@ function HeroSection(props: Props) {
                   pauseBetweenAnimations={1}
                 />
                 <div className='flex justify-center items-center ml-5'>
-                  <p className="text-2xl font-extrabold">Engineer.</p>
+                  <p className="text-2xl md:text-2xl font-extrabold">Engineer.</p>
                 </div>
               </div>
-              <p className="font-extrabold text-lg-500 mt-4">Practical code, Real impact.</p>
+              <p className="font-extrabold text-lg text-center md:text-left md:text-lg mt-4">Practical code, Real impact.</p>
             </div>
           </div>
           <div className='w-full flex justify-center items-center'>
-            <div className='w-[400px] h-[250px] lg:w-[550px] lg:h-[400px] bg-white relative'
+            <div className='w-[350px] h-[200px] lg:w-[550px] lg:h-[400px] bg-white relative'
               style={{ borderRadius: '19% 81% 17% 83% / 77% 15% 85% 23%' }}
             >
               {progress < 100 && <Loader progress={progress} />}
@@ -341,17 +315,17 @@ function HeroSection(props: Props) {
       </div>
       <div className='w-full flex justify-center bg-white relative'>
         <div className='w-full lg:max-w-[1440px] h-screen flex justify-between font-mono'>
-          <div className='z-10'>
-            <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-20">
+          <div className='z-10 flex flex-col justify-start items-center md:justify-center'>
+            <div className="max-w-7xl mx-auto py-20 px-4 md:px-20 lg:px-20">
               <h2 className="text-lg md:text-4xl mb-4 text-black max-w-4xl font-bold">
                 Contact
               </h2>
               <p className="text-black text-sm md:text-base max-w-md">
                 Building a new team?<br /> I help teams build and scale high-quality digital products. Let’s connect.
               </p>
-              <div className='w-full flex gap-5'>
+              <div className='w-full grid grid-cols-2 gap-10 mt-10'>
                 <button
-                  className='flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg text-left'
+                  className='flex flex-col relative border-2 py-2 px-5 md:p-5  rounded-xl text-sm shadow-lg text-left'
                   onClick={() => open(ENV.github)}
                 >
                   <div className='flex mt-2'>
@@ -361,7 +335,7 @@ function HeroSection(props: Props) {
                 </button>
 
                 <button
-                  className='flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'
+                  className='flex flex-col relative border-2  py-2 px-5 md:p-5 rounded-xl text-sm shadow-lg'
                   onClick={() => open(ENV.linkedin)}
                 >
                   <div className='flex mt-2'>
@@ -370,7 +344,7 @@ function HeroSection(props: Props) {
                   </div>
                 </button>
                 <button
-                  className='flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'
+                  className='flex flex-col relative border-2  py-2 px-5 md:p-5 rounded-xl text-sm shadow-lg'
                   onClick={() =>
                     open(
                       `https://wa.me/${ENV.whatsapp}`
@@ -422,7 +396,7 @@ function HeroSection(props: Props) {
         </div>
         <div className='absolute  w-full h-full'>
           <div className='relative h-full'>
-          <Lanyard position={[0, 0, 40]} gravity={[0, -40, 0]} />
+            <Lanyard position={[0, 0, 40]} gravity={[0, -40, 0]} />
           </div>
         </div>
       </div>

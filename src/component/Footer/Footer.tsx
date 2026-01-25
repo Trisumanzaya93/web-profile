@@ -89,7 +89,7 @@ function Footer(props: any) {
 
   return (
 
-    <nav style={{
+    <nav className="top-full" style={{
       position: 'sticky',
       top: '90%',
       zIndex: 100
@@ -113,7 +113,6 @@ function Footer(props: any) {
           )}
         >
           <FloatingDock
-            // mobileClassName="translate-x-20" // only for demo, remove for production
             items={links}
           />
         </motion.div>

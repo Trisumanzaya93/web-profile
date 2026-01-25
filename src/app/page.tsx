@@ -6,19 +6,19 @@ import Modal from "@/components/ui/modal";
 
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   const scrollReff = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-  const width = window.innerWidth;
-    if (width < 1024) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  }, []);
+  // const width = window.innerWidth;
+  //   if (width < 1024) {
+  //     setIsMobile(true);
+  //   } else {
+  //     setIsMobile(false);
+  //   }
+  // }, []);
 
   return (
     <div className="h-full overflow-scroll scroll-h scrollbar-hide" ref={scrollReff}>

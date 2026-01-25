@@ -38,12 +38,12 @@ const FloatingDockMobile = ({
 }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className={cn("relative block md:hidden", className)}>
+    <div className={cn("mx-auto h-16 pb-60 items-end md:hidden relative ", className)}>
       <AnimatePresence>
         {open && (
           <motion.div
             layoutId="nav"
-            className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-2"
+            className="absolute mx-auto bottom-full mb-2 p-2 rounded-full flex flex-col gap-2 bg-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[12.7px]"
           >
             {items.map((item, idx) => (
               <motion.div
@@ -65,21 +65,23 @@ const FloatingDockMobile = ({
                 <a
                   href={item.href}
                   key={item.title}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
+                  className="flex h-16 w-16 items-center justify-center rounded-full bg-[#1A535C] dark:bg-neutral-900"
                 >
-                  <div className="h-4 w-4">{item.icon}</div>
+                  <div className="h-10 w-10">{item.icon}</div>
                 </a>
               </motion.div>
             ))}
           </motion.div>
         )}
       </AnimatePresence>
+      <div className="bg-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[12.7px] p-2 rounded-full">
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        className="flex h-16 w-16 items-center justify-center rounded-full bg-[#1A535C] dark:bg-neutral-800"
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        <IconLayoutNavbarCollapse className="w-10 h-10 text-white" />
       </button>
+      </div>
     </div>
   );
 };
@@ -97,7 +99,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto h-16 items-end gap-4 rounded-2xl px-4 pb-3 md:flex bg-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[12.7px]",
+        "mx-auto h-16 items-end gap-4 rounded-2xl px-4 pb-3 hidden md:flex bg-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[12.7px]",
         className,
       )}
     >

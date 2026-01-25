@@ -144,8 +144,6 @@ export default function Carousel({ slides }: CarouselProps) {
   const [current, setCurrent] = useState(0);
 
   const handlePreviousClick = () => {
-    console.log('jalan');
-    
     const previous = current - 1;
     setCurrent(previous < 0 ? slides.length - 1 : previous);
   };

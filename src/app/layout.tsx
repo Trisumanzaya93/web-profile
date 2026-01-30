@@ -15,12 +15,12 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Tri Sumanzaya — Front-End Developer",
+  title: "Tri Sumanzaya — Software Engineer Developer",
   description:
-    "Front-End Developer with 3+ years of experience building digital banking solutions.",
+    "Software Engineer with 3+ years of experience building digital banking solutions.",
 
   openGraph: {
-    title: "Tri Sumanzaya — Front-End Developer",
+    title: "Tri Sumanzaya — Software Engineer",
     description:
       "Building and scaling digital banking solutions with a focus on reliability and user experience.",
     url: "https://sumanzaya.com",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: "https://sumanzaya.com/og.png",
         width: 1200,
         height: 630,
-        alt: "Tri Sumanzaya — Front-End Developer",
+        alt: "Tri Sumanzaya — Software Engineer",
       },
     ],
     type: "website",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Tri Sumanzaya — Front-End Developer",
+    title: "Tri Sumanzaya — Software Engineer",
     description:
-      "Front-End Developer focused on digital banking solutions and scalable products.",
+      "Software Engineer focused on digital banking solutions and scalable products.",
     images: ["https://sumanzaya.com/og.png"],
   },
   alternates: {
@@ -66,12 +66,11 @@ export default function RootLayout({
               "@type": "Person",
               name: "Tri Sumanzaya",
               url: "https://sumanzaya.com",
-              jobTitle: "Front-End Developer",
+              jobTitle: "Software Engineer Developer",
               knowsAbout: [
                 "Front-End Development",
-                "React",
-                "Next.js",
-                "Digital Banking Solutions",
+                "Mobile Development",
+                "Back-End Development",
               ],
               sameAs: [
                 "https://www.linkedin.com/in/trisumanzaya",

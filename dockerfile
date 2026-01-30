@@ -32,6 +32,8 @@ RUN npm run build
 FROM node:20-alpine AS runner
 WORKDIR /app
 
+COPY .env .env
+
 ENV NODE_ENV=production
 
 # Create non-root user

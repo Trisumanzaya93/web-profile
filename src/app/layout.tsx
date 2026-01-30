@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -54,6 +55,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Structured Data (Schema.org Person) */}
+        <Script
+          id="person-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Tri Sumanzaya",
+              url: "https://sumanzaya.com",
+              jobTitle: "Front-End Developer",
+              knowsAbout: [
+                "Front-End Development",
+                "React",
+                "Next.js",
+                "Digital Banking Solutions",
+              ],
+              sameAs: [
+                "https://www.linkedin.com/in/USERNAME_KAMU",
+              ],
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black h-screen w-screen overflow-hidden`}
       >

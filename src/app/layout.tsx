@@ -14,8 +14,37 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Sumanzaya",
-  description: "Personal Website of Tri Sumanzaya",
+  title: "Tri Sumanzaya — Front-End Developer",
+  description:
+    "Front-End Developer with 3+ years of experience building digital banking solutions.",
+
+  openGraph: {
+    title: "Tri Sumanzaya — Front-End Developer",
+    description:
+      "Building and scaling digital banking solutions with a focus on reliability and user experience.",
+    url: "https://sumanzaya.com",
+    siteName: "Tri Sumanzaya",
+    images: [
+      {
+        url: "https://sumanzaya.com/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Tri Sumanzaya — Front-End Developer",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Tri Sumanzaya — Front-End Developer",
+    description:
+      "Front-End Developer focused on digital banking solutions and scalable products.",
+    images: ["https://sumanzaya.com/og.png"],
+  },
+  alternates: {
+    canonical: "https://sumanzaya.com",
+  },
 };
 
 export default function RootLayout({

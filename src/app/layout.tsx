@@ -56,7 +56,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Structured Data (Schema.org Person) */}
         <Script
           id="person-schema"
           type="application/ld+json"
@@ -75,7 +74,7 @@ export default function RootLayout({
                 "Digital Banking Solutions",
               ],
               sameAs: [
-                "https://www.linkedin.com/in/USERNAME_KAMU",
+                "https://www.linkedin.com/in/trisumanzaya",
               ],
             }),
           }}

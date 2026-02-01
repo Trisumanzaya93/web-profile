@@ -18,8 +18,8 @@ export default function Modal(props: ModalProps) {
   return (
     <Dialog open={props.open}>
       {/* <DialogTrigger>Open</DialogTrigger> */}
-      <DialogOverlay className="bg-black">
-        <DialogContent className="[&>button:last-child]:hidden font-mono">
+      <DialogOverlay>
+        <DialogContent className="[&>button:last-child]:hidden font-geist">
           <DialogTitle>
             <IoIosWarning className="text-yellow-500 text-7xl text-center w-full" />
           </DialogTitle>

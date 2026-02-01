@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -14,8 +15,14 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+export const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
 export const metadata: Metadata = {
-  title: "Tri Sumanzaya — Software Engineer Developer",
+  title: "Tri Sumanzaya — Software Engineer",
   description:
     "Software Engineer with 3+ years of experience building digital banking solutions.",
 
@@ -54,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}>
       <head>
         <Script
           id="person-schema"
@@ -80,7 +87,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black h-screen w-screen overflow-hidden`}
+        className={`antialiased bg-black h-screen w-screen overflow-hidden`}
       >
         {children}
       </body>

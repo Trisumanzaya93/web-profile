@@ -26,6 +26,10 @@ import Carousel from '../carousel';
 import Lanyard from '../../Lanyard'
 import { Progress } from "@/components/ui/progress"
 import { useProgress } from '@react-three/drei';
+import {
+  motion,
+  AnimatePresence,
+} from "motion/react";
 
 import { ENV } from '@/lib/constants';
 import ModalJourney from '../modal-journey';
@@ -216,43 +220,43 @@ const projectCollection = [
     title: "Indosat x BFI",
     description: "A digital talent management platform",
     isMobile: true,
-    image: ["/images/indosat1.png","/images/indosat2.png","/images/indosat3.png","/images/indosat4.png"],
+    image: ["/images/indosat1.png", "/images/indosat2.png", "/images/indosat3.png", "/images/indosat4.png"],
   },
   {
     title: "Queue Management System",
     description: "desa negara ratu",
     isMobile: false,
-    image: ["/images/desa1.png","/images/desa2.png","/images/desa3.png"],
+    image: ["/images/desa1.png", "/images/desa2.png", "/images/desa3.png"],
   },
   {
     title: "Smartax",
     description: "A digital talent management platform",
     isMobile: false,
-    image: ["/images/smartax1.png","/images/smartax2.png","/images/smartax3.png","/images/smartax4.png"],
+    image: ["/images/smartax1.png", "/images/smartax2.png", "/images/smartax3.png", "/images/smartax4.png"],
   },
   {
     title: "Coffee Shop",
     description: "coffee shop",
     isMobile: false,
-    image: ["/images/coffeshop1.png","/images/coffeshop2.png","/images/coffeshop3.png"],
+    image: ["/images/coffeshop1.png", "/images/coffeshop2.png", "/images/coffeshop3.png"],
   },
   {
     title: "Zwallet",
     description: "Zwallet",
     isMobile: false,
-    image: ["/images/zwallet1.png", "/images/zwallet2.png", "/images/zwallet3.png" ],
+    image: ["/images/zwallet1.png", "/images/zwallet2.png", "/images/zwallet3.png"],
   },
   {
     title: "Razz E-commerce",
     description: "razz e-commerce",
     isMobile: false,
-    image: ["/images/razz1.png", "/images/razz2.png", "/images/razz3.png" ],
+    image: ["/images/razz1.png", "/images/razz2.png", "/images/razz3.png"],
   },
   {
     title: "Vehicle Rental",
     description: "Vehicle Rental",
     isMobile: false,
-    image: ["/images/vehicle1.png", "/images/vehicle2.png", "/images/vehicle3.png" ],
+    image: ["/images/vehicle1.png", "/images/vehicle2.png", "/images/vehicle3.png"],
   },
 ];
 
@@ -264,6 +268,26 @@ const Loader = (props: LoaderProps) => {
       <p className='mt-5'>{props.progress.toFixed(0)}% </p>
     </div>
   )
+}
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 6 },
+  show: { opacity: 1, y: 0 }
+}
+
+const fadeUpSoft = {
+  hidden: { opacity: 0, y: 8 },
+  show: { opacity: 1, y: 0 }
+}
+
+const fade = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 }
+}
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.96 },
+  show: { opacity: 1, scale: 1 }
 }
 
 function HeroSection(props: Props) {
@@ -288,14 +312,38 @@ function HeroSection(props: Props) {
             returnDuration={1.5}
           />
         </div>
-        <div className="w-full h-full flex flex-col gap-20 lg:flex-row mt-20 md:mt-0 md:justify-center text-white font-geist">
-          <div className='w-full lg:h-full flex justify-center px-5'>
-            <div className='h-full flex flex-col justify-center'>
-              <h1 className="text-2xl text-center md:text-left md:text-5xl font-extrabold mb-4">Hi, I’m</h1>
-              <h1 className="text-2xl text-center md:text-left md:text-5xl font-extrabold mb-4">Tri Sumanzaya</h1>
-              <div className='flex items-center flex-col md:flex-row'>
+        <div className="w-full h-full flex flex-col lg:flex-row mt-0 justify-center text-white font-geist">
+          <div className='w-full lg:h-full flex justify-center items-center px-5 lg:px-0'>
+            <motion.div
+              className='mr-0 lg:mr-20'
+              initial="hidden"
+              animate="show"
+            >
+              <motion.p
+                variants={fadeUp}
+                transition={{ duration: 0.2 }}
+                className="text-left text-3xl lg:text-5xl font-extrabold mb-4 fade-in-20 ring-offset-8"
+              >
+                Hi, I’m
+              </motion.p>
+              <motion.h1
+                variants={fadeUp}
+                transition={{ duration: 0.45, delay: 0.15, ease: "easeOut" }}
+                className="text-left text-3xl lg:text-5xl font-extrabold"
+              >Tri Sumanzaya</motion.h1>
+              <motion.span
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.3, delay: 0.25 }}
+                className="w-full inline-block h-[5px] origin-left bg-[#4F8CFF] mb-2"
+              />
+              <motion.div
+                className='flex items-center flex-row'
+                variants={fadeUp}
+                transition={{ duration: 0.45, delay: 0.35, ease: "easeOut" }}
+              >
                 <TrueFocus
-                  sentence="Mobile Software"
+                  sentence="Software Mobile"
                   manualMode={false}
                   blurAmount={5}
                   borderColor="#1A535C"
@@ -303,19 +351,29 @@ function HeroSection(props: Props) {
                   pauseBetweenAnimations={1}
                 />
                 <div className='flex justify-center items-center ml-5'>
-                  <p className="text-2xl md:text-2xl font-extrabold">Engineer.</p>
+                  <p className=" text-xl lg:text-2xl font-extrabold">Engineer.</p>
                 </div>
-              </div>
-              <p className="font-extrabold text-lg text-center md:text-left md:text-lg mt-4">Practical code, Real impact.</p>
-            </div>
+              </motion.div>
+              <motion.p
+                className="font-extrabold text-lg  md:text-left mt-2"
+                variants={fade}
+                transition={{ duration: 0.25, delay: 0.65 }}
+              >Practical code, Real impact.</motion.p>
+            </motion.div>
+
           </div>
-          <div className='w-full flex justify-center items-center'>
-            <div className='w-[350px] h-[200px] lg:w-[550px] lg:h-[400px] bg-white relative'
+          <div className='w-full justify-center items-center hidden lg:flex'>
+            <motion.div
+              className='w-[350px] h-[200px] lg:w-[550px] lg:h-[400px] bg-white relative'
               style={{ borderRadius: '19% 81% 17% 83% / 77% 15% 85% 23%' }}
+              variants={scaleIn}
+              initial="hidden"
+              animate="show"
+              transition={{ duration: 0.6, delay: 0.85, ease: "easeOut" }}
             >
               {progress < 100 && <Loader progress={progress} />}
               <ComputerCanvas />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -324,33 +382,68 @@ function HeroSection(props: Props) {
         <Timeline data={Journey({ setShowModalJourney, setModalContent })} />
       </div>
       <div className='w-full flex justify-center bg-white font-geist pb-20'>
-        <div className='w-full lg:max-w-[1440px]'>
-          <div className="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20">
-            <h2 className="text-lg md:text-4xl mb-4  max-w-4xl font-bold">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, margin: "-150px" }}
+          className='w-full lg:max-w-[1440px] font-bold'
+        >
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, margin: "-150px" }}
+            className="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20"
+          >
+            <motion.h2
+              variants={fadeUpSoft}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="text-lg md:text-4xl mb-4  max-w-4xl font-bold"
+            >
               Project Collection
-            </h2>
-            <p className=" text-sm md:text-base max-w-md">
+            </motion.h2>
+            <motion.p
+              variants={fadeUpSoft}
+              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+              className=" text-sm md:text-base max-w-md"
+            >
               Selected Side Projects.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8 lg:px-20 mb-16">
+          <motion.div
+            variants={fadeUpSoft}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8 lg:px-20 mb-16"
+          >
             {projectCollection.map((item, index) => (
-              <CardProject {...item} key={index}/>
+              <CardProject {...item} key={index} />
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
       <div className='w-full flex justify-center font-geist pb-20'>
         <div className='w-full lg:max-w-[1440px]'>
-          <div className="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20">
-            <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, margin: "-150px" }}
+            className="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20 font-bold"
+          >
+            <motion.h2
+              variants={fadeUpSoft}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold"
+            >
               Toolkit
-            </h2>
-            <p className="text-white text-sm md:text-base max-w-md">
-              Core tools that drive my development journey.
-            </p>
-          </div>
+            </motion.h2>
+            <motion.p
+              variants={fadeUpSoft}
+              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+              className=" text-sm md:text-base text-white max-w-md"
+            >
+              Core tools that drive my development journey
+            </motion.p>
+          </motion.div>
           <div className='lg:max-w-[1440px] px-10'>
             <LogoLoop
               {...({
@@ -368,14 +461,27 @@ function HeroSection(props: Props) {
             />
           </div>
           <div className="relative overflow-hidden w-full h-full pb-20">
-            <div className="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20">
-              <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold">
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, margin: "-150px" }}
+              className="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20 font-bold"
+            >
+              <motion.h2
+                variants={fadeUpSoft}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold"
+              >
                 Certificate
-              </h2>
-              <p className="text-white text-sm md:text-base max-w-md">
+              </motion.h2>
+              <motion.p
+                variants={fadeUpSoft}
+                transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                className=" text-sm md:text-base text-white max-w-md"
+              >
                 Certificates earned along the journey
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
             <Carousel slides={slideData} />
           </div>
         </div>
@@ -383,21 +489,32 @@ function HeroSection(props: Props) {
       <div className='w-full flex justify-center bg-white relative'>
         <div className='w-full lg:max-w-[1440px] h-screen flex justify-between font-geist'>
           <div className='z-10 flex flex-col justify-start items-center md:justify-center'>
-            <div className="max-w-7xl mx-auto py-20 px-4 md:px-20 lg:px-20">
-              <h2 className="text-lg md:text-4xl mb-4 text-black max-w-4xl font-bold">
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, margin: "-450px" }} className="max-w-7xl mx-auto py-20 px-4 md:px-20 lg:px-20">
+              <motion.h2
+                variants={fadeUpSoft}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="text-lg md:text-4xl mb-4 text-black max-w-4xl font-bold"
+              >
                 Contact
-              </h2>
-              <p className="text-black text-sm md:text-base max-w-md">
+              </motion.h2>
+              <motion.p
+                variants={fadeUpSoft}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                className="text-black text-sm md:text-base max-w-md font-bold"
+              >
                 Building a new team?<br /> I help teams build and scale high-quality digital products. Let’s connect.
-              </p>
-              <div className='w-full grid grid-cols-2 gap-10 mt-10'>
+              </motion.p>
+              <div className='w-full grid grid-cols-2 gap-10 mt-10 font-bold'>
                 <button
                   className='flex flex-col relative border-2 py-2 px-5 md:p-5  rounded-xl text-sm shadow-lg text-left'
                   onClick={() => open(ENV.github)}
                 >
                   <div className='flex mt-2'>
                     <SiGithub className='p-0 text-lg mr-2' />
-                    <p className='p-0'>Github</p>
+                    <p className='p-0 '>Github</p>
                   </div>
                 </button>
 
@@ -424,41 +541,7 @@ function HeroSection(props: Props) {
                   </div>
                 </button>
               </div>
-            </div>
-            {/* <div className="max-w-7xl mx-auto pb-20 px-4 md:px-8 lg:px-20">
-            <h2 className="text-lg md:text-4xl mb-4 text-black max-w-4xl font-bold">
-              Social Media
-            </h2>
-            <p className="text-black text-sm md:text-base max-w-md">
-              Please follow me on social media
-            </p>
-            <div className='w-full flex gap-5'>
-              <div className=' flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'>
-                <div className='flex mt-2'>
-                  <SiInstagram className='p-0 m-0 text-lg mr-2' />
-                  <p className='p-0'>Instagram</p>
-                </div>
-              </div>
-              <div className='flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'>
-                <div className='flex mt-2'>
-                  <SiTiktok className='p-0 text-lg mr-2' />
-                  <p className='p-0'>Tiktok</p>
-                </div>
-              </div>
-              <div className='flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'>
-                <div className='flex mt-2'>
-                  <SiLinkedin className='p-0 text-lg mr-2' />
-                  <p className='p-0'>LinkedIn</p>
-                </div>
-              </div>
-              <div className='flex flex-col mt-10 relative border-2 p-5 rounded-xl text-sm shadow-lg'>
-                <div className='flex mt-2'>
-                  <SiGithub className='p-0 text-lg mr-2' />
-                  <p className='p-0'>Github</p>
-                </div>
-              </div>
-            </div>
-          </div> */}
+            </motion.div>
           </div>
         </div>
         <div className='absolute  w-full h-full'>

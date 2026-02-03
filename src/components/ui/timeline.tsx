@@ -1,6 +1,5 @@
 "use client";
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
@@ -32,24 +31,50 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
+  const fadeUpSoft = {
+    hidden: { opacity: 0, y: 8 },
+    show: { opacity: 1, y: 0 }
+  }
+
   return (
     <div
       className="w-full font-geist md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, margin: "-150px" }}
+        className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10"
+      >
+        <motion.h2
+          variants={fadeUpSoft}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold"
+        >
           Release Notes of My Journey
-        </h2>
-        <p className="text-white text-sm md:text-base max-w-sm">
+        </motion.h2>
+        <motion.p
+          variants={fadeUpSoft}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          className="text-white text-sm md:text-base max-w-sm font-bold"
+        >
           I&apos;ve been working for the past 3 years. Here&apos;s
           a timeline of my journey.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, margin: "-300px" }}
+        ref={ref}
+        className="relative max-w-7xl mx-auto pb-20"
+      >
         {data.map((item, index) => (
-          <div
+          <motion.div
+            variants={fadeUpSoft}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             key={index}
             className="flex justify-start md:pt-40 md:gap-10"
           >
@@ -68,7 +93,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </h3>
               {item.content}{" "}
             </div>
-          </div>
+          </motion.div>
         ))}
         <div
           style={{
@@ -84,7 +109,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-[#FF6F61] via-[#A3F7BF] to-transparent from-[0%] via-[10%] rounded-full"
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

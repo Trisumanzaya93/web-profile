@@ -32,20 +32,20 @@ const links = [
     ),
     href: "comming-soon",
   },
-  {
-    title: "SZ-UI",
-    icon: (
-      <div className="w-full h-full bg-white flex justify-center items-center rounded-md">
-        <Image
-          src="/images/sumanzaya-logo.png"
-          alt="startup template"
-          width={40}
-          height={40}
-        />
-      </div>
-    ),
-    href: "comming-soon",
-  },
+  // {
+  //   title: "SZ-UI",
+  //   icon: (
+  //     <div className="w-full h-full bg-white flex justify-center items-center rounded-md">
+  //       <Image
+  //         src="/images/sumanzaya-logo.png"
+  //         alt="startup template"
+  //         width={40}
+  //         height={40}
+  //       />
+  //     </div>
+  //   ),
+  //   href: "comming-soon",
+  // },
   {
     title: "Playground",
     icon: (

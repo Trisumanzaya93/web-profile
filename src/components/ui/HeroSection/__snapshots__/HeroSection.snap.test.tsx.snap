@@ -1,0 +1,624 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HeroSection Snapshot renders correctly and matches snapshot 1`] = `
+<DocumentFragment>
+  <main
+    class="flex flex-col items-center -mt-20"
+  >
+    <div
+      data-testid="footer"
+    />
+    <div
+      class="lg:max-w-[1440px] h-screen flex justify-center"
+    >
+      <div
+        class="w-[calc(100%)] h-screen  absolute -z-10 bg-black"
+      >
+        <div
+          data-testid="dot-grid"
+        />
+      </div>
+      <div
+        class="w-full h-full flex flex-col lg:flex-row mt-0 justify-center text-white font-geist"
+      >
+        <div
+          class="w-full lg:h-full flex justify-center items-center px-0"
+        >
+          <div
+            class="mr-0 lg:mr-20"
+          >
+            <p
+              class="text-left text-3xl lg:text-5xl font-extrabold mb-4 fade-in-20 ring-offset-8"
+            >
+              Hi, I’m
+            </p>
+            <h1
+              class="text-left text-3xl lg:text-5xl font-extrabold"
+            >
+              Tri Sumanzaya
+            </h1>
+            <span
+              class="w-full inline-block h-[5px] origin-left bg-[#4F8CFF] mb-2"
+            />
+            <div
+              class="flex items-center flex-row"
+            >
+              <div
+                data-testid="true-focus"
+              >
+                Software Mobile
+              </div>
+              <div
+                class="flex justify-center items-center ml-5"
+              >
+                <p
+                  class=" text-xl lg:text-2xl font-extrabold"
+                >
+                  Engineer.
+                </p>
+              </div>
+            </div>
+            <p
+              class="font-extrabold text-lg  md:text-left mt-2"
+            >
+              Practical code, Real impact.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-full justify-center items-center hidden lg:flex"
+        >
+          <div
+            class="w-[350px] h-[200px] lg:w-[550px] lg:h-[400px] bg-white relative"
+            style="border-radius: 19% 81% 17% 83% / 77% 15% 85% 23%;"
+          >
+            <div
+              data-testid="computer-canvas"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full flex justify-center flex-col bg-[#1A535C] bg-[url("/images/bgtimeline.png")] pb-20"
+    >
+      <div
+        data-testid="timeline"
+      >
+        <div
+          data-testid="timeline-item-0"
+        >
+          <h2>
+            2022
+          </h2>
+          <div>
+            Timeline Content
+          </div>
+        </div>
+        <div
+          data-testid="timeline-item-1"
+        >
+          <h2>
+            2023 - Now
+          </h2>
+          <div>
+            Timeline Content
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full flex justify-center bg-white font-geist pb-20"
+    >
+      <div
+        class="w-full lg:max-w-[1440px] font-bold"
+      >
+        <div
+          class="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20"
+        >
+          <h2
+            class="text-lg md:text-4xl mb-4  max-w-4xl font-bold"
+          >
+            Project Collection
+          </h2>
+          <p
+            class=" text-sm md:text-base max-w-md"
+          >
+            Selected Side Projects.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8 lg:px-20 mb-16"
+        >
+          <div
+            data-testid="card-project"
+          >
+            Indosat x BFI
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Queue Management System
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Smartax
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Coffee Shop
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Zwallet
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Razz E-commerce
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Vehicle Rental
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full flex justify-center font-geist pb-20"
+    >
+      <div
+        class="w-full lg:max-w-[1440px]"
+      >
+        <div
+          class="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20 font-bold"
+        >
+          <h2
+            class="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold"
+          >
+            Toolkit
+          </h2>
+          <p
+            class=" text-sm md:text-base text-white max-w-md"
+          >
+            Core tools that drive my development journey
+          </p>
+        </div>
+        <div
+          class="lg:max-w-[1440px] px-10"
+        >
+          <div
+            data-testid="logo-loop"
+          />
+        </div>
+        <div
+          class="relative overflow-hidden w-full h-full pb-20"
+        >
+          <div
+            class="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20 font-bold"
+          >
+            <h2
+              class="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold"
+            >
+              Certificate
+            </h2>
+            <p
+              class=" text-sm md:text-base text-white max-w-md"
+            >
+              Certificates earned along the journey
+            </p>
+          </div>
+          <div
+            data-testid="carousel"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full flex justify-center bg-white relative"
+    >
+      <div
+        class="w-full lg:max-w-[1440px] h-screen flex justify-between font-geist"
+      >
+        <div
+          class="z-10 flex flex-col justify-start items-center md:justify-center"
+        >
+          <div
+            class="max-w-7xl mx-auto py-20 px-4 md:px-20 lg:px-20"
+          >
+            <h2
+              class="text-lg md:text-4xl mb-4 text-black max-w-4xl font-bold"
+            >
+              Contact
+            </h2>
+            <p
+              class="text-black text-sm md:text-base max-w-md font-bold"
+            >
+              Building a new team?
+              <br />
+               I help teams build and scale high-quality digital products. Let’s connect.
+            </p>
+            <div
+              class="w-full grid grid-cols-2 gap-10 mt-10 font-bold"
+            >
+              <button
+                class="flex flex-col relative border-2 py-2 px-5 md:p-5  rounded-xl text-sm shadow-lg text-left"
+              >
+                <div
+                  class="flex mt-2"
+                >
+                  <div
+                    data-testid="icon-github"
+                  />
+                  <p
+                    class="p-0 "
+                  >
+                    Github
+                  </p>
+                </div>
+              </button>
+              <button
+                class="flex flex-col relative border-2  py-2 px-5 md:p-5 rounded-xl text-sm shadow-lg"
+              >
+                <div
+                  class="flex mt-2"
+                >
+                  <div
+                    data-testid="icon-linkedin"
+                  />
+                  <p
+                    class="p-0"
+                  >
+                    LinkedIn
+                  </p>
+                </div>
+              </button>
+              <button
+                class="flex flex-col relative border-2  py-2 px-5 md:p-5 rounded-xl text-sm shadow-lg"
+              >
+                <div
+                  class="flex mt-2"
+                >
+                  <div
+                    data-testid="icon-mail"
+                  />
+                  <p
+                    class="p-0"
+                  >
+                    Whatsapp
+                  </p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute  w-full h-full"
+      >
+        <div
+          class="relative h-full"
+        >
+          <div
+            data-testid="lanyard"
+          />
+        </div>
+      </div>
+    </div>
+  </main>
+</DocumentFragment>
+`;
+
+exports[`HeroSection Snapshot renders correctly without dock and matches snapshot 1`] = `
+<DocumentFragment>
+  <main
+    class="flex flex-col items-center -mt-20"
+  >
+    <div
+      class="lg:max-w-[1440px] h-screen flex justify-center"
+    >
+      <div
+        class="w-[calc(100%)] h-screen  absolute -z-10 bg-black"
+      >
+        <div
+          data-testid="dot-grid"
+        />
+      </div>
+      <div
+        class="w-full h-full flex flex-col lg:flex-row mt-0 justify-center text-white font-geist"
+      >
+        <div
+          class="w-full lg:h-full flex justify-center items-center px-0"
+        >
+          <div
+            class="mr-0 lg:mr-20"
+          >
+            <p
+              class="text-left text-3xl lg:text-5xl font-extrabold mb-4 fade-in-20 ring-offset-8"
+            >
+              Hi, I’m
+            </p>
+            <h1
+              class="text-left text-3xl lg:text-5xl font-extrabold"
+            >
+              Tri Sumanzaya
+            </h1>
+            <span
+              class="w-full inline-block h-[5px] origin-left bg-[#4F8CFF] mb-2"
+            />
+            <div
+              class="flex items-center flex-row"
+            >
+              <div
+                data-testid="true-focus"
+              >
+                Software Mobile
+              </div>
+              <div
+                class="flex justify-center items-center ml-5"
+              >
+                <p
+                  class=" text-xl lg:text-2xl font-extrabold"
+                >
+                  Engineer.
+                </p>
+              </div>
+            </div>
+            <p
+              class="font-extrabold text-lg  md:text-left mt-2"
+            >
+              Practical code, Real impact.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-full justify-center items-center hidden lg:flex"
+        >
+          <div
+            class="w-[350px] h-[200px] lg:w-[550px] lg:h-[400px] bg-white relative"
+            style="border-radius: 19% 81% 17% 83% / 77% 15% 85% 23%;"
+          >
+            <div
+              data-testid="computer-canvas"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full flex justify-center flex-col bg-[#1A535C] bg-[url("/images/bgtimeline.png")] pb-20"
+    >
+      <div
+        data-testid="timeline"
+      >
+        <div
+          data-testid="timeline-item-0"
+        >
+          <h2>
+            2022
+          </h2>
+          <div>
+            Timeline Content
+          </div>
+        </div>
+        <div
+          data-testid="timeline-item-1"
+        >
+          <h2>
+            2023 - Now
+          </h2>
+          <div>
+            Timeline Content
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full flex justify-center bg-white font-geist pb-20"
+    >
+      <div
+        class="w-full lg:max-w-[1440px] font-bold"
+      >
+        <div
+          class="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20"
+        >
+          <h2
+            class="text-lg md:text-4xl mb-4  max-w-4xl font-bold"
+          >
+            Project Collection
+          </h2>
+          <p
+            class=" text-sm md:text-base max-w-md"
+          >
+            Selected Side Projects.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8 lg:px-20 mb-16"
+        >
+          <div
+            data-testid="card-project"
+          >
+            Indosat x BFI
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Queue Management System
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Smartax
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Coffee Shop
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Zwallet
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Razz E-commerce
+          </div>
+          <div
+            data-testid="card-project"
+          >
+            Vehicle Rental
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full flex justify-center font-geist pb-20"
+    >
+      <div
+        class="w-full lg:max-w-[1440px]"
+      >
+        <div
+          class="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20 font-bold"
+        >
+          <h2
+            class="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold"
+          >
+            Toolkit
+          </h2>
+          <p
+            class=" text-sm md:text-base text-white max-w-md"
+          >
+            Core tools that drive my development journey
+          </p>
+        </div>
+        <div
+          class="lg:max-w-[1440px] px-10"
+        >
+          <div
+            data-testid="logo-loop"
+          />
+        </div>
+        <div
+          class="relative overflow-hidden w-full h-full pb-20"
+        >
+          <div
+            class="w-full lg:max-w-[1440px] mx-auto py-20 px-4 md:px-8 lg:px-20 font-bold"
+          >
+            <h2
+              class="text-lg md:text-4xl mb-4 text-white max-w-4xl font-bold"
+            >
+              Certificate
+            </h2>
+            <p
+              class=" text-sm md:text-base text-white max-w-md"
+            >
+              Certificates earned along the journey
+            </p>
+          </div>
+          <div
+            data-testid="carousel"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full flex justify-center bg-white relative"
+    >
+      <div
+        class="w-full lg:max-w-[1440px] h-screen flex justify-between font-geist"
+      >
+        <div
+          class="z-10 flex flex-col justify-start items-center md:justify-center"
+        >
+          <div
+            class="max-w-7xl mx-auto py-20 px-4 md:px-20 lg:px-20"
+          >
+            <h2
+              class="text-lg md:text-4xl mb-4 text-black max-w-4xl font-bold"
+            >
+              Contact
+            </h2>
+            <p
+              class="text-black text-sm md:text-base max-w-md font-bold"
+            >
+              Building a new team?
+              <br />
+               I help teams build and scale high-quality digital products. Let’s connect.
+            </p>
+            <div
+              class="w-full grid grid-cols-2 gap-10 mt-10 font-bold"
+            >
+              <button
+                class="flex flex-col relative border-2 py-2 px-5 md:p-5  rounded-xl text-sm shadow-lg text-left"
+              >
+                <div
+                  class="flex mt-2"
+                >
+                  <div
+                    data-testid="icon-github"
+                  />
+                  <p
+                    class="p-0 "
+                  >
+                    Github
+                  </p>
+                </div>
+              </button>
+              <button
+                class="flex flex-col relative border-2  py-2 px-5 md:p-5 rounded-xl text-sm shadow-lg"
+              >
+                <div
+                  class="flex mt-2"
+                >
+                  <div
+                    data-testid="icon-linkedin"
+                  />
+                  <p
+                    class="p-0"
+                  >
+                    LinkedIn
+                  </p>
+                </div>
+              </button>
+              <button
+                class="flex flex-col relative border-2  py-2 px-5 md:p-5 rounded-xl text-sm shadow-lg"
+              >
+                <div
+                  class="flex mt-2"
+                >
+                  <div
+                    data-testid="icon-mail"
+                  />
+                  <p
+                    class="p-0"
+                  >
+                    Whatsapp
+                  </p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute  w-full h-full"
+      >
+        <div
+          class="relative h-full"
+        >
+          <div
+            data-testid="lanyard"
+          />
+        </div>
+      </div>
+    </div>
+  </main>
+</DocumentFragment>
+`;

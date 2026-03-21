@@ -28,7 +28,6 @@ import { Progress } from "@/components/ui/progress"
 import { useProgress } from '@react-three/drei';
 import {
   motion,
-  AnimatePresence,
 } from "motion/react";
 
 import { ENV } from '@/lib/constants';
@@ -71,16 +70,19 @@ const experiencesFazztech = [
   "Delivered assignment features for the Digi Expert web platform",
 ];
 
+
+const handleModal = (setter: Journey, content: Array<string>) => () => {
+  setter.setModalContent(content);
+  setter.setShowModalJourney(true);
+}
+
 const Journey = (setter: Journey) => {
 
   return [
     {
       title: "2022",
       content: (
-        <button className='w-full text-left' onClick={() => {
-          setter.setModalContent(experiencesFazztech);
-          setter.setShowModalJourney(true);
-        }}>
+        <button className='w-full text-left' onClick={handleModal(setter, experiencesFazztech)}>
           <p className="text-lg text-white font-bold">
             Fazztech - Front End Developer
           </p>
@@ -131,10 +133,7 @@ const Journey = (setter: Journey) => {
     {
       title: "2023 - Now",
       content: (
-        <button onClick={() => {
-          setter.setModalContent(experiencesSmbc);
-          setter.setShowModalJourney(true);
-        }} className='w-full text-left'>
+        <button onClick={handleModal(setter, experiencesSmbc)} className='w-full text-left'>
           <p className="text-lg mb-8 text-white font-bold">
             SMBCI - Digital Banking Solution Developer
           </p>
@@ -313,7 +312,7 @@ function HeroSection(props: Props) {
           />
         </div>
         <div className="w-full h-full flex flex-col lg:flex-row mt-0 justify-center text-white font-geist">
-          <div className='w-full lg:h-full flex justify-center items-center px-5 lg:px-0'>
+          <div className='w-full lg:h-full flex justify-center items-center px-0'>
             <motion.div
               className='mr-0 lg:mr-20'
               initial="hidden"
@@ -492,17 +491,17 @@ function HeroSection(props: Props) {
             <motion.div
               initial="hidden"
               whileInView="show"
-              viewport={{ once: false, margin: "-450px" }} className="max-w-7xl mx-auto py-20 px-4 md:px-20 lg:px-20">
+              viewport={{ once: false, }} className="max-w-7xl mx-auto py-20 px-4 md:px-20 lg:px-20">
               <motion.h2
                 variants={fadeUpSoft}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.6,delay: 0.5, ease: "easeOut" }}
                 className="text-lg md:text-4xl mb-4 text-black max-w-4xl font-bold"
               >
                 Contact
               </motion.h2>
               <motion.p
                 variants={fadeUpSoft}
-                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
                 className="text-black text-sm md:text-base max-w-md font-bold"
               >
                 Building a new team?<br /> I help teams build and scale high-quality digital products. Let’s connect.

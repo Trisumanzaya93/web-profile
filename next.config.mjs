@@ -1,3 +1,6 @@
+import { createMDX } from 'fumadocs-mdx/next';
+
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   turbopack: {
@@ -22,4 +25,10 @@ const nextConfig = {
   output: 'standalone',
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  // customise the config file path
+  rootContentPath: './src/content',
+  configPath: "source.config.ts"
+});
+
+export default withMDX(nextConfig);

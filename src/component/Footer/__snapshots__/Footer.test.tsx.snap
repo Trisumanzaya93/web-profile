@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders and matches snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="top-full"
+    style="position: sticky; top: 90%; z-index: 100;"
+  >
+    <div
+      class="w-screen sticky top-0 px-7 h-20 flex items-center justify-around"
+      style="opacity: 1; transform: translateY(100px);"
+    >
+      <div
+        data-testid="floating-dock"
+      >
+        3
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

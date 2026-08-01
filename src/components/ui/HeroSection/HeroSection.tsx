@@ -364,7 +364,7 @@ function HeroSection(props: Props) {
           </div>
           <div className='w-full justify-center items-center hidden lg:flex'>
             <motion.div
-              className='w-[350px] h-[200px] lg:w-[550px] lg:h-[400px] bg-white relative'
+              className='w-[350px] h-[200px] lg:w-[550px] lg:h-[400px] bg-white relative overflow-hidden'
               style={{ borderRadius: '19% 81% 17% 83% / 77% 15% 85% 23%' }}
               variants={scaleIn}
               initial="hidden"
@@ -372,7 +372,7 @@ function HeroSection(props: Props) {
               transition={{ duration: 0.6, delay: 0.85, ease: "easeOut" }}
             >
               {progress < 100 && <Loader progress={progress} />}
-              <ComputerCanvas />
+              <ComputerCanvas className="absolute inset-0 h-full w-full rounded-[inherit]" />
             </motion.div>
           </div>
         </div>
